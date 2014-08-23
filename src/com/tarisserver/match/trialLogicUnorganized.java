@@ -11,6 +11,8 @@ import java.util.List;
 
 /**
  * Created by Bhaskar on 8/18/2014.
+ *
+ * Taris Java server
  */
 public class trialLogicUnorganized {
 
@@ -28,7 +30,7 @@ public class trialLogicUnorganized {
             AdParser adParser = new AdParser();
 
             //JSONObject advertisement = adParser.getAd(tarisDB, "53ee435285f90ca814282e57", "53ee438c85f90ca814282e59");
-            JSONObject advertisement = adParser.getAd(tarisDB, campaigns, "53dd4d97ad65e0b823a87766", "53dfb80f736fbc240c32ad65" );
+            JSONObject advertisement = adParser.getAd(tarisDB, campaigns, "53e51c45d135ef0000728fd2", "53e51f61d135ef0000728fd3" );
 
             System.out.println("ADVERTISEMENT");
             System.out.println("=============");

@@ -1,4 +1,6 @@
-package com.tarisserver.match; /**
+package com.tarisserver.match;
+
+/**
  * Created by Bhaskar on 8/13/2014.
  */
 import com.tarisserver.match.MongoOps;
