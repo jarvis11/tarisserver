@@ -81,9 +81,16 @@ public class AdParser {
 
 
             AdParser adParser = new AdParser();
-            JSONObject myCampaign = adParser.getAd(tarisDB, campaigns, "53ee435285f90ca814282e57", "53ee438c85f90ca814282e59");
+            JSONObject advertisement = adParser.getAd(tarisDB, campaigns, "53e51c45d135ef0000728fd2", "53e51f61d135ef0000728fd3" );
 
-            System.out.println(myCampaign);
+            System.out.println(advertisement);
+            String id = advertisement.getJSONObject("_id").getString("$oid");
+            System.out.println(id);
+            String type = advertisement.getString("type");
+            System.out.println(type);
+            JSONObject target = advertisement.getJSONObject("target");
+            JSONObject bid = advertisement.getJSONObject("bid");
+
 
 
         } catch (UnknownHostException e) {

@@ -36,6 +36,11 @@ public class trialLogicUnorganized {
             System.out.println("=============");
             System.out.println(advertisement);
 
+
+            //Get the bid of the ad
+            Double bidAmount = advertisement.getJSONObject("bid").getDouble("amount");
+            System.out.println(bidAmount);
+
             System.out.println();
             System.out.println("VENUE MATCHES");
             System.out.println("=============");
