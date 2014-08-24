@@ -28,7 +28,7 @@ public class AdParser {
 
 
     //RETURNS A SINGLE AD WITH ID advertisement_id
-    public JSONObject getAd(DB database, DBCollection collection, String campaign_id, String advertisement_id){
+    public static JSONObject getAd(DB database, DBCollection collection, String campaign_id, String advertisement_id){
 
         //SHOULD INCLUDE ERROR CHECK TO MAKE SURE CAMPAIGNS COLLECTION EXISTS!
         //DBCollection campaigns = database.getCollection(collection_name);
@@ -36,6 +36,8 @@ public class AdParser {
         //FIND THE CAMPAIGN YOU NEED TO FIND YOUR AD WITHIN
         DBObject query = new BasicDBObject("_id", new ObjectId(campaign_id));
         DBObject campaign = collection.findOne(query);
+
+
 
         //NOW CONVERT YOUR CAMPAIGN FROM A DBOJECT INTO A JSON OBJECT FOR EASY PARSING
         String serialized_json = JSON.serialize(campaign);
@@ -54,7 +56,9 @@ public class AdParser {
                 JSONObject ad_in_question = new JSONObject(campaign_ads.get(i).toString());
                 //System.out.println(ad_in_question.getJSONObject("_id").get("$oid"));
                 if(ad_in_question.getJSONObject("_id").get("$oid").equals(advertisement_id)){
-                    ad_json = ad_in_question;
+                    return ad_in_question;
+                } else{
+                    return null;
                 }
 
 
@@ -80,16 +84,15 @@ public class AdParser {
             DBCollection campaigns = tarisDB.getCollection("campaigns");
 
 
-            AdParser adParser = new AdParser();
-            JSONObject advertisement = adParser.getAd(tarisDB, campaigns, "53e51c45d135ef0000728fd2", "53e51f61d135ef0000728fd3" );
+            JSONObject advertisement = AdParser.getAd(tarisDB, campaigns, "53dd4d97ad65e0b823a87766", "53dd58b89a7c2cbc226f87d4" );
 
             System.out.println(advertisement);
-            String id = advertisement.getJSONObject("_id").getString("$oid");
-            System.out.println(id);
-            String type = advertisement.getString("type");
-            System.out.println(type);
-            JSONObject target = advertisement.getJSONObject("target");
-            JSONObject bid = advertisement.getJSONObject("bid");
+//            String id = advertisement.getJSONObject("_id").getString("$oid");
+//            System.out.println(id);
+//            String type = advertisement.getString("type");
+//            System.out.println(type);
+//            JSONObject target = advertisement.getJSONObject("target");
+//            JSONObject bid = advertisement.getJSONObject("bid");
 
 
 
