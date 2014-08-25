@@ -26,11 +26,9 @@ public class trialLogicUnorganized {
             DBCollection campaigns = tarisDB.getCollection("campaigns");
 
 
-            //INITIALIZE AN INSTANCE OF OUR AD PARSER
-            AdParser adParser = new AdParser();
 
             //JSONObject advertisement = adParser.getAd(tarisDB, "53ee435285f90ca814282e57", "53ee438c85f90ca814282e59");
-            JSONObject advertisement = adParser.getAd(tarisDB, campaigns, "53e51c45d135ef0000728fd2", "53e51f61d135ef0000728fd3" );
+            JSONObject advertisement = AdParser.getAd(campaigns, "53e51c45d135ef0000728fd2", "53e51f61d135ef0000728fd3");
 
             System.out.println("ADVERTISEMENT");
             System.out.println("=============");

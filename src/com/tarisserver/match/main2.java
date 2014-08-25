@@ -47,7 +47,7 @@ public class main2 {
             }
             
             AdParser myAdParser = new AdParser();
-            JSONObject myCampaign = myAdParser.getAd(tariDB, campaigns, "53dd4d97ad65e0b823a87766", "23423");
+            JSONObject myCampaign = myAdParser.getAd(campaigns, "53dd4d97ad65e0b823a87766", "23423");
 
             System.out.println(myCampaign);
 
