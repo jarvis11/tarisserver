@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Developer/IdeaProjects/dependencies/json-20140107.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../IdeaProjects/dependencies/json-20140107.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Developer/IdeaProjects/dependencies/mongo-2.10.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../IdeaProjects/dependencies/mongo-2.10.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -45,31 +45,10 @@ public class trialLogicUnorganized {
 
             //System.out.println(advertisement.getJSONObject("target").has("venue_name"));
             //GRAB ALL VENUES
-            DBCollection venues = tarisDB.getCollection("venues");
+            List<JSONObject> json_venues = VenueParser.getVenues(tarisDB.getCollection("venues"));
 
-            List<DBObject> individual_venues = new ArrayList<DBObject>();
-
-            DBCursor venue_cursor = venues.find();
-            try {
-                while (venue_cursor.hasNext()) {
-                    //System.out.println(cursor.next());
-                    individual_venues.add(venue_cursor.next());
-                }
-            } finally {
-                venue_cursor.close();
-            }
-
-            List<JSONObject> json_venues = new ArrayList<JSONObject>();
-
-            for (int i = 0; i < individual_venues.size(); i++){
-                String jOB = JSON.serialize(individual_venues.get(i));
-                JSONObject jsonToAdd = new JSONObject(jOB);
-                json_venues.add(jsonToAdd);
-            }
 
             List<JSONObject> json_microlocations = new ArrayList<JSONObject>();
-
-
 
             //NOW WE HAVE A LIST FULL OF JSON VENUES. LET PARSE THROUGH THAT LIST AND FIND MATCHES, ADDING ALL VALID MICROLOCATIONS TO A NEW ARRAY
             for(int i = 0; i < json_venues.size(); i++){

@@ -131,8 +131,8 @@ public class AdParser {
             DBCollection campaigns = tarisDB.getCollection("campaigns");
 
 
-            //JSONObject advertisement = AdParser.getAd(tarisDB, campaigns, "53dd4d97ad65e0b823a87766", "53dd58b89a7c2cbc226f87d4" );
-            JSONObject advertisement = AdParser.getAd(campaigns, "53dd4d97ad65e0b823a87766", "53dd58b89a7c2cbc226f87d4");
+            JSONObject advertisement = AdParser.getAd(campaigns, "53e51c45d135ef0000728fd2", "53e51f61d135ef0000728fd3" );
+            //JSONObject advertisement = AdParser.getAd(campaigns, "53dd4d97ad65e0b823a87766", "53dd58b89a7c2cbc226f87d4");
             System.out.println(advertisement);
 
 
