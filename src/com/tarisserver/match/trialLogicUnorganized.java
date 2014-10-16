@@ -27,8 +27,9 @@ public class trialLogicUnorganized {
 
 
 
-            //JSONObject advertisement = adParser.getAd(tarisDB, "53ee435285f90ca814282e57", "53ee438c85f90ca814282e59");
-            JSONObject advertisement = AdParser.getAd(campaigns, "53e51c45d135ef0000728fd2", "53e51f61d135ef0000728fd3");
+            //JSONObject advertisement = AdParser.getAd(campaigns,"53ee435285f90ca814282e57", "53ee438c85f90ca814282e59");
+            //JSONObject advertisement = AdParser.getAd(campaigns, "53e51c45d135ef0000728fd2", "53e51f61d135ef0000728fd3");
+            JSONObject advertisement = AdParser.getAd(campaigns, "53dd4d97ad65e0b823a87766", "53dd58b89a7c2cbc226f87d4");
 
             System.out.println("ADVERTISEMENT");
             System.out.println("=============");
@@ -118,6 +119,8 @@ public class trialLogicUnorganized {
 
             for(int i = 0; i < json_microlocations.size(); i++){
 
+                System.out.println(json_microlocations.get(i));
+
                 //CHECK IF EACH MICROLOCATIONS IS VALID
                 //FIRST CHECK FOR DESCRIPTOR TAGS
                 if(advertisement.getJSONObject("target").has("microlocation_descriptor_tag")){
@@ -131,6 +134,7 @@ public class trialLogicUnorganized {
 
                     List<Object> microlocationDescriptorTags = new ArrayList<Object>();
                     for(int j = 0; j < json_microlocations.get(i).getJSONArray("descriptor_tag").length(); j++){
+                        System.out.println(json_microlocations.get(i).get("_id"));
 
                         microlocationDescriptorTags.add(json_microlocations.get(i).getJSONArray("descriptor_tag").get(j));
                     }
